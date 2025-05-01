@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shogun Script Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#76827F',
+                        'background-dark': '#02040A',
+                        'dark-gray': '#0E1218',
+                        'soft-black': '#11161A',
+                        accent: '#03050B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark min-h-screen text-white">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-dark-gray flex flex-col py-6 px-4 border-r border-soft-black">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-primary tracking-wide">Shogun Script</h1>
+            </div>
+            <nav class="flex-1">
+                <ul class="space-y-2">
+                    <li><a href="#" class="block py-2 px-3 rounded bg-primary bg-opacity-20 text-primary font-semibold">Dashboard</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Ideas</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Scripts</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Call Sheets</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Shot Lists</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Schedule</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Team</a></li>
+                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Resources</a></li>
+                </ul>
+            </nav>
+            <div class="mt-8 text-xs text-dark-gray">
+                &copy; 2024 Shogun Script
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 bg-background-dark p-8 overflow-y-auto">
+            <header class="mb-8">
+                <h2 class="text-3xl font-bold text-white mb-2">Good afternoon, Director</h2>
+                <p class="text-gray-400">Welcome back! Here's your filmmaking dashboard.</p>
+            </header>
+            <!-- Quick Links / Recently Visited -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">Recently Visited</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-soft-black rounded-lg p-4 shadow hover:shadow-lg transition">
+                        <span class="text-2xl">💡</span>
+                        <div class="mt-2 font-medium">Idea: Dream Sequence</div>
+                        <div class="text-xs text-gray-400">2 days ago</div>
+                    </div>
+                    <div class="bg-soft-black rounded-lg p-4 shadow hover:shadow-lg transition">
+                        <span class="text-2xl">📜</span>
+                        <div class="mt-2 font-medium">Script: Opening Scene</div>
+                        <div class="text-xs text-gray-400">3 days ago</div>
+                    </div>
+                    <div class="bg-soft-black rounded-lg p-4 shadow hover:shadow-lg transition">
+                        <span class="text-2xl">🎬</span>
+                        <div class="mt-2 font-medium">Call Sheet: Day 1</div>
+                        <div class="text-xs text-gray-400">1 week ago</div>
+                    </div>
+                    <div class="bg-soft-black rounded-lg p-4 shadow hover:shadow-lg transition">
+                        <span class="text-2xl">📷</span>
+                        <div class="mt-2 font-medium">Shot List: Scene 5</div>
+                        <div class="text-xs text-gray-400">5 days ago</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Upcoming Events / Tasks -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold text-primary mb-4">Upcoming Events</h3>
+                <div class="bg-soft-black rounded-lg p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <div class="font-medium text-lg">Table Read</div>
+                        <div class="text-gray-400 text-sm">Today, 4:00 PM</div>
+                    </div>
+                    <div>
+                        <div class="font-medium text-lg">Location Scout</div>
+                        <div class="text-gray-400 text-sm">Tomorrow, 10:00 AM</div>
+                    </div>
+                    <div>
+                        <div class="font-medium text-lg">Shoot: Scene 3</div>
+                        <div class="text-gray-400 text-sm">Friday, 8:00 AM</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Project Overview / Sections -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-soft-black rounded-lg p-6 shadow">
+                    <h4 class="text-lg font-semibold text-primary mb-2">Ideas</h4>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1">
+                        <li>Dream Sequence</li>
+                        <li>Chase in the Alley</li>
+                        <li>Flashback Reveal</li>
+                    </ul>
+                </div>
+                <div class="bg-soft-black rounded-lg p-6 shadow">
+                    <h4 class="text-lg font-semibold text-primary mb-2">Scripts</h4>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1">
+                        <li>Opening Scene</li>
+                        <li>Climax</li>
+                        <li>Resolution</li>
+                    </ul>
+                </div>
+                <div class="bg-soft-black rounded-lg p-6 shadow">
+                    <h4 class="text-lg font-semibold text-primary mb-2">Call Sheets</h4>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1">
+                        <li>Day 1: Cast & Crew</li>
+                        <li>Day 2: Location B</li>
+                        <li>Day 3: Night Shoot</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html> 
