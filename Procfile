@@ -1,1 +1,1 @@
-web: gunicorn shogun-script:app_variable name
+web: gunicorn app:app

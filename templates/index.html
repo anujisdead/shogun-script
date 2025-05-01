@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shogun Script</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#76827F',
+                        'background-dark': '#02040A',
+                        'dark-gray': '#0E1218',
+                        'soft-black': '#11161A',
+                        accent: '#03050B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-primary">Shogun Script</h1>
+            <p class="text-dark-gray mt-2">A modern web application</p>
+        </header>
+
+        <main class="bg-soft-black rounded-lg p-6 shadow-lg">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">Welcome</h2>
+                <p class="text-gray-300 mb-6">
+                    This is a simple Flask application with a modern UI built using Tailwind CSS.
+                </p>
+                
+                <div class="bg-accent rounded p-4 mb-6">
+                    <h3 class="text-lg font-medium mb-2">Features</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Responsive design</li>
+                        <li>Modern UI components</li>
+                        <li>Custom color palette</li>
+                    </ul>
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="/" class="bg-primary hover:bg-opacity-80 text-white font-medium py-2 px-4 rounded transition-colors">
+                        Refresh Page
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-8 text-center text-dark-gray">
+            <p>&copy; 2024 Shogun Script. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html> 
