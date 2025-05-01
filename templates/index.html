@@ -15,49 +15,21 @@
                         'dark-gray': '#0E1218',
                         'soft-black': '#11161A',
                         accent: '#03050B',
+                        brown: '#774936',
+                        slate: '#2A2D34',
+                        teal: '#012A36',
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-background-dark min-h-screen text-white">
-    <div class="container mx-auto px-4 py-8">
-        <header class="mb-8">
-            <h1 class="text-4xl font-bold text-primary">Shogun Script</h1>
-            <p class="text-dark-gray mt-2">A modern web application</p>
-        </header>
-
-        <main class="bg-soft-black rounded-lg p-6 shadow-lg">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-2xl font-semibold mb-4">Welcome</h2>
-                <p class="text-gray-300 mb-6">
-                    This is a simple Flask application with a modern UI built using Tailwind CSS.
-                </p>
-                
-                <div class="bg-accent rounded p-4 mb-6">
-                    <h3 class="text-lg font-medium mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li>Responsive design</li>
-                        <li>Modern UI components</li>
-                        <li>Custom color palette</li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-col items-center space-y-4">
-                    <a href="/" class="bg-primary hover:bg-opacity-80 text-white font-medium py-2 px-4 rounded transition-colors">
-                        Refresh Page
-                    </a>
-                    <a href="/dashboard" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg shadow hover:bg-opacity-90 transition-colors text-lg">
-                        Take me to my dashboard
-                    </a>
-                </div>
-            </div>
-        </main>
-
-        <footer class="mt-8 text-center text-dark-gray">
-            <p>&copy; 2024 Shogun Script. All rights reserved.</p>
-        </footer>
-    </div>
+<body class="bg-background-dark min-h-screen flex items-center justify-center text-white">
+    <a href="/dashboard"
+       class="bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-lg text-2xl transition-all duration-200
+              hover:bg-brown hover:text-accent focus:bg-slate focus:text-primary active:bg-teal active:scale-95
+              outline-none ring-2 ring-primary ring-offset-2 ring-offset-background-dark">
+        Take me to my dashboard
+    </a>
 </body>
 </html> 

@@ -15,15 +15,18 @@ Please follow these UI/UX design principles when making visual or layout changes
 3. **Color Palette**
    Use the following custom color palette consistently across the app:
 
-   | Purpose         | Hex Code     |
-   |------------------|--------------|
-   | Primary Base     | `#76827F`     |
-   | Background Dark  | `#02040A`     |
-   | Dark Gray        | `#0E1218`     |
-   | Soft Black       | `#11161A`     |
-   | Accent/Contrast  | `#03050B`     |
+   | Purpose            | Hex Code     |
+   |--------------------|--------------|
+   | Primary Base       | `#76827F`    |
+   | Background Dark    | `#02040A`    |
+   | Dark Gray          | `#0E1218`    |
+   | Soft Black         | `#11161A`    |
+   | Accent/Contrast    | `#03050B`    |
+   | Brown              | `#774936`    |
+   | Slate              | `#2A2D34`    |
+   | Teal               | `#012A36`    |
 
-   > Tip: Configure these in your `tailwind.config.js` file under `extend.colors` for easier use like `bg-primary`, `text-dark`, etc.
+   > Tip: Configure these in your `tailwind.config.js` file under `extend.colors` for easier use like `bg-primary`, `text-dark`, `bg-brown`, etc.
 
 4. **Responsiveness**
    - Design must be responsive — use Tailwind's mobile-first utilities (`sm:`, `md:`, `lg:`, etc.).
