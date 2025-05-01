@@ -23,13 +23,51 @@
             }
         }
     </script>
+    <style>
+        .bg-movie-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            width: 100vw;
+            height: 100vh;
+        }
+        .bg-movie-grid img {
+            width: 100vw;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.32;
+            filter: grayscale(0.2) blur(1px) brightness(0.7);
+        }
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            background: rgba(2,4,10,0.7);
+        }
+        .content {
+            position: relative;
+            z-index: 20;
+        }
+    </style>
 </head>
-<body class="bg-background-dark min-h-screen flex items-center justify-center text-white">
-    <a href="/dashboard"
-       class="bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-lg text-2xl transition-all duration-200
-              hover:bg-brown hover:text-accent focus:bg-slate focus:text-primary active:bg-teal active:scale-95
-              outline-none ring-2 ring-primary ring-offset-2 ring-offset-background-dark">
-        Take me to my dashboard
-    </a>
+<body class="bg-background-dark min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <div class="bg-movie-grid">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Movie Shot 1" />
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Movie Shot 2" />
+        <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=1200&q=80" alt="Movie Shot 3" />
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" alt="Movie Shot 4" />
+        <img src="https://images.unsplash.com/photo-1467987506553-8f3916508521?auto=format&fit=crop&w=1200&q=80" alt="Movie Shot 5" />
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="content flex items-center justify-center w-full h-screen">
+        <a href="/dashboard"
+           class="bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-lg text-2xl transition-all duration-200
+                  hover:bg-brown hover:text-accent focus:bg-slate focus:text-primary active:bg-teal active:scale-95
+                  outline-none ring-2 ring-primary ring-offset-2 ring-offset-background-dark">
+            Take me to my dashboard
+        </a>
+    </div>
 </body>
 </html> 
