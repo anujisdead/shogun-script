@@ -44,16 +44,26 @@
             position: relative;
             z-index: 20;
         }
+        .button-style {
+            @apply bg-teal text-white font-bold py-4 px-8 shadow-lg text-2xl transition-all duration-200
+                   hover:bg-primary hover:text-accent focus:bg-slate focus:text-primary active:bg-brown active:scale-95
+                   outline-none ring-2 ring-teal ring-offset-2 ring-offset-background-dark rounded-none;
+        }
     </style>
 </head>
 <body class="bg-background-dark min-h-screen flex items-center justify-center text-white overflow-hidden">
     <div class="bg-movie-single"></div>
     <div class="bg-overlay"></div>
-    <div class="content flex items-center justify-center w-full h-screen">
-        <a href="/dashboard"
-           class="bg-teal text-white font-bold py-4 px-8 shadow-lg text-2xl transition-all duration-200
-                  hover:bg-primary hover:text-accent focus:bg-slate focus:text-primary active:bg-brown active:scale-95
-                  outline-none ring-2 ring-teal ring-offset-2 ring-offset-background-dark rounded-none">
+    <div class="content flex flex-col items-center justify-center w-full h-screen space-y-6">
+        <div class="flex space-x-6">
+            <a href="/login" class="button-style">
+                Login
+            </a>
+            <a href="/signup" class="button-style">
+                Sign Up
+            </a>
+        </div>
+        <a href="/dashboard" class="button-style">
             Take me to my dashboard
         </a>
     </div>
