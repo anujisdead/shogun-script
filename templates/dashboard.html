@@ -42,6 +42,32 @@
             width: 90%;
             max-width: 400px;
         }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #0E1218;
+            border: 1px solid #11161A;
+            border-radius: 0.25rem;
+            min-width: 150px;
+            z-index: 1000;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 0.5rem 1rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .dropdown-item:hover {
+            background-color: #11161A;
+        }
     </style>
 </head>
 <body class="bg-background-dark min-h-screen text-white">
@@ -59,8 +85,32 @@
                     Add New Section
                 </button>
                 <ul id="navList" class="space-y-2">
-                    <li><a href="#" class="block py-2 px-3 rounded bg-primary bg-opacity-20 text-primary font-semibold">Projects</a></li>
-                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Ideas</a></li>
+                    <li class="nav-item">
+                        <div class="flex items-center justify-between group">
+                            <a href="#" class="block py-2 px-3 rounded bg-primary bg-opacity-20 text-primary font-semibold flex-1">Projects</a>
+                            <button class="p-2 hover:bg-soft-black rounded" onclick="toggleDropdown(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item" onclick="removeSection(this)">Remove Section</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="flex items-center justify-between group">
+                            <a href="#" class="block py-2 px-3 rounded hover:bg-soft-black flex-1">Ideas</a>
+                            <button class="p-2 hover:bg-soft-black rounded" onclick="toggleDropdown(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item" onclick="removeSection(this)">Remove Section</div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Characterization</a></li>
                     <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Initial Drafts</a></li>
                     <li><a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">Script</a></li>
@@ -184,26 +234,57 @@
             document.getElementById('sectionName').value = '';
         }
 
+        function toggleDropdown(button) {
+            const dropdown = button.nextElementSibling;
+            const isVisible = dropdown.style.display === 'block';
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                if (menu !== dropdown) {
+                    menu.style.display = 'none';
+                }
+            });
+            
+            dropdown.style.display = isVisible ? 'none' : 'block';
+        }
+
+        function removeSection(menuItem) {
+            const navItem = menuItem.closest('.nav-item');
+            navItem.remove();
+        }
+
         function addNewSection() {
             const sectionName = document.getElementById('sectionName').value.trim();
             if (sectionName) {
                 const navList = document.getElementById('navList');
                 const newItem = document.createElement('li');
+                newItem.className = 'nav-item';
                 newItem.innerHTML = `
-                    <a href="#" class="block py-2 px-3 rounded hover:bg-soft-black">${sectionName}</a>
+                    <div class="flex items-center justify-between group">
+                        <a href="#" class="block py-2 px-3 rounded hover:bg-soft-black flex-1">${sectionName}</a>
+                        <button class="p-2 hover:bg-soft-black rounded" onclick="toggleDropdown(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item" onclick="removeSection(this)">Remove Section</div>
+                        </div>
+                    </div>
                 `;
                 navList.appendChild(newItem);
                 closeModal();
             }
         }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('addSectionModal');
-            if (event.target == modal) {
-                closeModal();
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-item')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
             }
-        }
+        });
     </script>
 </body>
 </html> 
